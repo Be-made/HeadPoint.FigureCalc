@@ -1,4 +1,6 @@
-﻿namespace FigureCalculator.Tools
+﻿using System;
+
+namespace FigureCalculator.Tools
 {
     public class RightTriangle : IFigure
     {
@@ -8,6 +10,9 @@
 
         public RightTriangle(float legA, float legB)
         {
+            if (legA <= 0f || legB <= 0f)
+                throw new ArgumentException("Not valid arguments");
+
             this.legA = legA;
             this.legB = legB;
         }

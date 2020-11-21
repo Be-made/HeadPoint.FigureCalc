@@ -17,5 +17,15 @@ namespace FigureCalculator.Tools.Tests
             var rightTriangle = new RightTriangle(3f, 7f);
             Assert.AreEqual(rightTriangle.CalcArea(), 10.5f);
         }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException), "Not valid arguments")]
+        public void NotValidArgumentsInConstructor()
+        {
+            var rect = new RightTriangle(0f, 7f);
+            rect = new RightTriangle(3f, 0f);
+            rect = new RightTriangle(-3f, 7f);
+            rect = new RightTriangle(3f, -7f);
+        }
     }
 }

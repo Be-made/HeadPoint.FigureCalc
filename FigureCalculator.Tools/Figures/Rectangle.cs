@@ -1,4 +1,6 @@
-﻿namespace FigureCalculator.Tools
+﻿using System;
+
+namespace FigureCalculator.Tools
 {
     public class Rectangle : IFigure
     {
@@ -8,6 +10,9 @@
 
         public Rectangle(float sideA, float sideB)
         {
+            if (sideA <= 0f || sideB <= 0f)
+                throw new ArgumentException("Not valid arguments");
+
             this.sideA = sideA;
             this.sideB = sideB;
         }

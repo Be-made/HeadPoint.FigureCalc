@@ -17,7 +17,15 @@ namespace FigureCalculator.Tools.Tests
         public void CalcAreaSumTest()
         {
             var rect = new Rectangle(3f, 7f);
-            Assert.Fail();
+            var rightTriangle = new RightTriangle(3f, 7f);
+
+            var calculatedAreaSum = figureCalculator.CalcAreaSum(new List<IFigure>
+            {
+                rect,
+                rightTriangle
+            });
+
+            Assert.AreEqual(calculatedAreaSum, 31.5f);
         }
     }
 }

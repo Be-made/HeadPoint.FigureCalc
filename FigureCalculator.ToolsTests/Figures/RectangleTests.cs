@@ -17,5 +17,15 @@ namespace FigureCalculator.Tools.Tests
             var rect = new Rectangle(3f, 7f);
             Assert.AreEqual(rect.CalcArea(), 21f);
         }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException), "Not valid arguments")]
+        public void NotValidArgumentsInConstructor()
+        {
+            var rect = new Rectangle(0f, 7f);
+            rect = new Rectangle(3f, 0f);
+            rect = new Rectangle(-3f, 7f);
+            rect = new Rectangle(3f, -7f);
+        }
     }
 }

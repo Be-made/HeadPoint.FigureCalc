@@ -8,6 +8,11 @@ namespace FigureCalculator.Tools
 {
     public class FigureCalculator
     {
+        /// <summary>
+        /// Подсчёт суммы площадей фигур
+        /// </summary>
+        /// <param name="figures"></param>
+        /// <returns></returns>
         public float CalcAreaSum(IEnumerable<IFigure> figures)
         {
             float areaSum = 0;
