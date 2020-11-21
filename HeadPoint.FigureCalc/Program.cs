@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FigureCalculator.Tools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,16 @@ namespace HeadPoint.FigureCalc
     {
         static void Main(string[] args)
         {
+            var figureCalculator = new FigureCalculator.Tools.FigureCalculator();
+
+            var calculatedAreaSum = figureCalculator.CalcAreaSum(new List<IFigure>
+            {
+                new Rectangle(3f, 7f),
+                new RightTriangle(3f, 7f)
+            });
+
+            Console.WriteLine("Sum figures area: "+ calculatedAreaSum);
+            Console.ReadKey();
         }
     }
 }
